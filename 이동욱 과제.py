@@ -1,12 +1,14 @@
-a = [[0] * 9 for _ in range(5)]  # 0~8: 학번, 이름, 영어, C, 파이썬, 총점, 평균, 학점, 등수
+a = [[0] * 9 for _ in range(5)]  
 
 def inputData():
+    print("학생 정보를 입력하세요:")
     for i in range(5):
-        a[i][0] = input("학번:\n")
-        a[i][1] = input("이름:\n")
-        a[i][2] = int(input("영어:\n"))
-        a[i][3] = int(input("C-언어:\n"))
-        a[i][4] = int(input("파이썬:\n"))
+        print(f"\n[{i+1}번째 학생]")
+        a[i][0] = input("학번: ")
+        a[i][1] = input("이름: ")
+        a[i][2] = int(input("영어: "))
+        a[i][3] = int(input("C-언어: "))
+        a[i][4] = int(input("파이썬: "))
 
 def sumScore():
     for i in range(5):
@@ -14,7 +16,7 @@ def sumScore():
 
 def avgScore():
     for i in range(5):
-        a[i][6] = round(a[i][5] / 3, 2)
+        a[i][6] = round(a[i][5] / 3, 2)  
 
 def avgGrade():
     for i in range(5):
@@ -51,7 +53,6 @@ def outputData():
     print("===============================================================================")
     for i in range(5):
         print(f"{a[i][0]:<16}{a[i][1]:<10}{a[i][2]:<8}{a[i][3]:<9}{a[i][4]:<9}{a[i][5]:<8}{a[i][6]:<8}{a[i][7]:<8}{a[i][8]}")
-
 
 inputData()
 sumScore()
